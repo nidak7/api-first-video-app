@@ -2,12 +2,10 @@ from flask import Flask
 from config import Config
 from extensions import init_db
 from flask_jwt_extended import JWTManager
-from flask_cors import CORS
 
 def create_app():
     app = Flask(__name__, static_folder="static", static_url_path="/static")
     app.config.from_object(Config)
-    CORS(app)
 
     db = init_db()
 
