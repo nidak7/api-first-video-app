@@ -1,11 +1,12 @@
+import os
 from pymongo import MongoClient
 
+mongo_client = None
 db = None
 
 def init_db():
-    global db
-    mongo_uri = "mongodb://localhost:27017"
-    client = MongoClient(mongo_uri)
-    db = client["video_app"]
+    global mongo_client, db
+    mongo_uri = os.environ.get("MONGO_URI")
+    mongo_client = MongoClient(mongo_uri)
+    db = mongo_client["video_app"]
     print("MongoDB connected:", db.name)
-    return db

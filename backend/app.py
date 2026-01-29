@@ -19,12 +19,11 @@ def create_app():
     app.register_blueprint(auth_bp)
     app.register_blueprint(video_bp)
 
-    @app.route("/")
+    @app.route("/api/healthz")
     def health():
-        return {"status": "Backend running"}
-
+        return {"ok": True}
+    
     return app
 
 if __name__ == "__main__":
     app = create_app()
-    app.run(debug=True)
