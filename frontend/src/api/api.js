@@ -1,4 +1,4 @@
-const BASE_URL = "http://127.0.0.1:5000";
+const BASE_URL = "https://video-backend-d3i5.onrender.com";
 
 export async function fetchDashboardVideos() {
   const response = await fetch(`${BASE_URL}/video/dashboard`);

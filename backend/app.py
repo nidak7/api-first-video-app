@@ -3,13 +3,14 @@ from config import Config
 from extensions import init_db
 from flask_jwt_extended import JWTManager
 import os
+from flask_cors import CORS
 
 def create_app():
     app = Flask(__name__, static_folder="static", static_url_path="/static")
     app.config.from_object(Config)
 
     db = init_db()
-
+    CORS(app)
     jwt = JWTManager(app)
 
     from routes.auth_routes import auth_bp
