@@ -1,0 +1,29 @@
+# Python
+backend/venv/
+backend/__pycache__/
+*.pyc
+
+# Flask
+.env
+instance/
+
+# Node / React
+frontend/node_modules/
+build/
+dist/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Env
+.env
+
+backend/static/videos/
