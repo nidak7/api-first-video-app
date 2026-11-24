@@ -1,5 +1,6 @@
 import os
 
 class Config:
-    SECRET_KEY = os.environ.get("SECRET_KEY", "dev-secret")
-    JWT_SECRET_KEY = os.environ.get("JWT_SECRET_KEY", "jwt-secret")
+    # set these in your environment (see .env.example), the defaults are only for local testing
+    SECRET_KEY = os.getenv("SECRET_KEY", "change-me-in-env")
+    JWT_SECRET_KEY = os.getenv("JWT_SECRET_KEY", "change-me-in-env")
